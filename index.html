@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="css/libraries/bootstrap.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <img src="img/bc-logo.png" alt="" class="img-responsive center-block">
+    <h1>beach bleeter</h1>
+    <textarea></textarea>
+    <button class="btn btn-primary center-block send-bleet">bleet!</button>
+
+    <h1>bleet feed</h1>
+    <div class="bleet-feed"></div>
+  </div>
+
+  <!-- modal html -->
+  <div class="modal fade log-in-modal" tabindex="-1" role="dialog" aria-labelledby="logInModal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <h1>beach bleeter</h1>
+        <hr>
+        <h2>email</h2>
+        <input class="email" type="text">
+        <h2>password</h2>
+        <input class="password" type="password">
+        <button class="btn btn-primary center-block log-in">log in</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="template" class="bleet-template">
+    <div class="bleet">
+      <h3><%= email %> says...</h3>
+      <p><%= bleet %> </p>
+      <p class="timestamp"><%= timestamp %></p>
+    </div>
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+  <script src="js/libraries/jquery-1.12.4.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCGBllTdXl-C0l5v-4HAzwz-nrKu__otQU",
+    authDomain: "beach-bleeter.firebaseapp.com",
+    databaseURL: "https://beach-bleeter.firebaseio.com",
+    storageBucket: "beach-bleeter.appspot.com",
+  };
+  firebase.initializeApp(config);
+  </script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
